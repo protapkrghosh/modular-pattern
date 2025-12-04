@@ -12,7 +12,7 @@ const auth = () => {
       }
 
       const decode = jwt.verify(token, config.jwtSecret as string);
-      console.log(decode);
+      // console.log(decode);
 
       next();
    };
