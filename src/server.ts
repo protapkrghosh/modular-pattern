@@ -4,6 +4,7 @@ import initDB from "./config/db";
 import logger from "./middleware/logger";
 import { userRoutes } from "./modules/users/user.route";
 import { todoRoutes } from "./modules/todos/todo.route";
+import { authRoutes } from "./modules/auth/auth.routes";
 
 const app = express();
 const port = config.port;
@@ -21,6 +22,7 @@ app.get("/", logger, (req: Request, res: Response) => {
 
 app.use("/users", userRoutes); // Users CRUD
 app.use("/todos", todoRoutes); // TODO CRUD
+app.use("/auth", authRoutes); // Auth Routes
 
 // Find not found route
 app.use((req: Request, res: Response) => {
